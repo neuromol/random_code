@@ -40,7 +40,7 @@ def main(input_file,key,gene,output):
     ##bring in the gene map file
     gene_file=pd.read_csv(gene, sep="\t" , header=0)
     ## merge in to get the gene ID
-    gene_combined = pd.merge(combined, gene_file, on="gene_id")
+    gene_combined = pd.merge(new, gene_file, on="gene_id")
     ## The clean dataframe
     Final = gene_combined[["rsid" , "gene" , "Z"]]
     ###output 
