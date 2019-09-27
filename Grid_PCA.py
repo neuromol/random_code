@@ -44,7 +44,7 @@ def main(file , index, comp , out):
     new_pca.columns = columns_list
     new_pca.to_csv(out, sep="\t" )
     plt.scatter(new_pca.PC1 , new_pca.PC2 )
-    plt.savefig("IPCA.png" , dpi=600)
+    plt.savefig("PCA.png" , dpi=600)
 
     
 
