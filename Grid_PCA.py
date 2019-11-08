@@ -9,13 +9,14 @@ import pandas as pd
 import argparse
 import sys
 from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import numpy as np
 
 def check_arg(args=None):
     parser = argparse.ArgumentParser(description='PCA on the cluster (need the ram)' ,formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('-i', '--input', help='T stat file',required='True')
-    parser.add_argument('-r', '--index', help='index for the SNP/RS field', default="SNP" )
+    parser.add_argument('-r', '--index', help='index column for the SNP/RS field', default="SNP" )
     parser.add_argument('-c', '--components', help='Number of components for PCA' ,required='True')
     parser.add_argument('-o', '--output', help='outfile of the PCs',required='True')
     results = parser.parse_args(args)
