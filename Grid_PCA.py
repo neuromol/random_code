@@ -27,6 +27,7 @@ def main(file , index, comp , out):
     data = raw.replace("NA" , np.nan)
     data = raw.dropna()
     data = data.abs()
+    data = StandardScaler().fit_transform(data)
     print ("the length of dataframe is :" + str(len(data.columns)) ) 
     print ("Printing datatypes; ")
     print (data.dtypes)
